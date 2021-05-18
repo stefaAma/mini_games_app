@@ -7,7 +7,107 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Parallax Styling */
+
+.parallax {
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.galaxy-img {
+	position: absolute;
+	min-height: 100vh;
+	width: 100%;
+	top: 0;
+	left: 0;
+	filter: brightness(50%);
+}
+
+.main-title {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-transform: uppercase;
+	z-index: 1;
+	color: whitesmoke;
+	font-size: 22.5vh;
+	letter-spacing: 3vh;
+	white-space: nowrap;
+	user-select: none;
+	margin: 0%;
+	padding: 0%;
+	text-shadow: 3px 3px 3px #000, 5px 5px 8px rgba(204, 0, 102, 0.5);
+}
+
+.moon-img {
+	position: absolute;
+	height: 5vh;
+	top: 50%;
+	left: 50%;
+	/*animation: spin-left 20s linear infinite;*/
+	
+	display: none;
+	/*filter: brightness(80%);*/
+}
+
+.earth-img, .mercury-img, .jupiter-img, .neptune-img, .sun-img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	filter: brightness(70%);
+}
+
+.earth-img {
+	height: 10vh;
+	animation: earth-orbit 15s linear infinite;
+}
+
+.mercury-img {
+	height: 5vh;
+	animation: mercury-orbit 10s linear infinite;
+}
+
+.jupiter-img {
+	height: 20vh;
+	animation: jupiter-orbit 25s linear infinite;
+}
+
+.neptune-img {
+	height: 15vh;
+	animation: neptune-orbit 30s linear infinite;
+}
+
+.sun-img {
+	height: 20vh;
+}
+
+/* orbiting animation */
+
+@keyframes earth-orbit {
+	from { transform: rotate(0deg) translateX(200px); }
+	to { transform: rotate(360deg) translateX(200px); }
+}
+
+@keyframes mercury-orbit {
+	from { transform: rotate(0deg) translateX(-150px); }
+	to { transform: rotate(360deg) translateX(-150px); }
+}
+
+@keyframes jupiter-orbit {
+	from { transform: rotate(0deg) translateX(-400px); }
+	to { transform: rotate(360deg) translateX(-400px); }
+}
+
+@keyframes neptune-orbit {
+	from { transform: rotate(0deg) translateX(600px); }
+	to { transform: rotate(360deg) translateX(600px); }
+}
+
+/* Content Styling */
+
+.content {
+	height: 100vh;
 }
