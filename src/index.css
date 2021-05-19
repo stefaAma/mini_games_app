@@ -7,6 +7,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Scrollbar Styling */
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(to bottom, #1aff1a, #1affff);
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(to bottom, #ff751a, #cf220a);
+}
+
 /* Parallax Styling */
 
 .parallax {
@@ -38,7 +53,7 @@ body {
 	user-select: none;
 	margin: 0%;
 	padding: 0%;
-	text-shadow: 3px 3px 3px #000, 5px 5px 8px rgba(204, 0, 102, 0.5);
+	text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25), 6px 6px 12px rgba(204, 0, 102, 0.5);
 }
 
 .moon-img {
@@ -57,7 +72,10 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	filter: brightness(70%);
+}
+
+.earth-img, .mercury-img, .jupiter-img, .neptune-img {
+	filter: brightness(80%);
 }
 
 .earth-img {
@@ -82,6 +100,7 @@ body {
 
 .sun-img {
 	height: 20vh;
+	filter: brightness(90%) saturate(120%);
 }
 
 /* orbiting animation */
@@ -110,4 +129,13 @@ body {
 
 .content {
 	height: 100vh;
+}
+
+.content::before {
+	content: "";
+	position: absolute;
+	bottom: -5%;
+	height: 75px;
+	width: 100%;
+	background: linear-gradient(to top, #5D3FD3, transparent);
 }
