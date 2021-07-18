@@ -6,7 +6,7 @@ const SUN_BRIGHTNESS = 90;
 
 export const Parallax = () => {
     let mainTitle = document.getElementsByClassName("main-title");
-    let galaxy = document.getElementsByClassName("galaxy-img");
+    // let galaxy = document.getElementsByClassName("galaxy-img");
     let earth = document.getElementsByClassName("earth-img");
     let mercury = document.getElementsByClassName("mercury-img");
     let jupiter = document.getElementsByClassName("jupiter-img");
@@ -18,7 +18,7 @@ export const Parallax = () => {
         mainTitle[0].style.transform = "translateX(-50%) rotate(" + (scroll_value * 0.25) + "deg) scale(" + (1 - (scroll_value * 0.001)) + ","
         + (1 - (scroll_value * 0.001)) + ")";
         mainTitle[0].style.opacity = (1 - (scroll_value * 0.001));
-        galaxy[0].style.transform = "translateY(" + (scroll_value * 0.5) + "px)";
+        // galaxy[0].style.transform = "translateY(" + (scroll_value * 0.15) + "px)";
         sun[0].style.filter = "brightness(" + (SUN_BRIGHTNESS - scroll_value * 0.1) + "%)";
         earth[0].style.filter = "brightness(" + (PLANETS_BRIGHTNESS - scroll_value * 0.1) + "%)";
         mercury[0].style.filter = "brightness(" + (PLANETS_BRIGHTNESS - scroll_value * 0.1) + "%)";

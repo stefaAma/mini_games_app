@@ -14,12 +14,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: linear-gradient(to bottom, #1aff1a, #1affff);
+	background: linear-gradient(to bottom, #5D3FD3, #1affff);
 	border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: linear-gradient(to bottom, #ff751a, #cf220a);
+	background: linear-gradient(to bottom, #33ccff, #66ffff);
 }
 
 /* Parallax Styling */
@@ -53,7 +53,7 @@ body {
 	user-select: none;
 	margin: 0%;
 	padding: 0%;
-	text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25), 6px 6px 12px rgba(204, 0, 102, 0.5);
+	text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25), 6px 6px 12px rgba(93, 63, 211, 0.5);
 }
 
 .moon-img {
@@ -129,13 +129,60 @@ body {
 
 .content {
 	height: 100vh;
+	background: linear-gradient(to bottom, #585858, #202020);
+	z-index: 2;
 }
 
 .content::before {
+	z-index: 1;
 	content: "";
 	position: absolute;
-	bottom: -5%;
-	height: 75px;
+	bottom: 0;
+	height: 100px;
 	width: 100%;
+	opacity: 0.3;
 	background: linear-gradient(to top, #5D3FD3, transparent);
+}
+
+/* Header Styling */
+
+.main-game-item, .game-item, .closing-item {
+	height: 10vh;
+	/*width: 99%;*/
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background: linear-gradient(to bottom, #5D3FD3, #9933ff);
+	border: 1px solid whitesmoke;
+}
+
+/*.main-game-item {
+	border: 3px solid black;
+}*/
+
+.game-items {
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+	animation: items-fading-in 0.75s;
+}
+
+@keyframes items-fading-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fa-atom, .fa-chess-king, .fa-chess-knight, .fa-times-circle {
+	color: #cc0066;
+	height: 5vh;
+	width: 5vh;
+}
+
+.item-title {
+	size: 8vh;
+	color: whitesmoke;
 }
